@@ -1,0 +1,642 @@
+/*orange color:#e67e22*/
+
+/*.........................*/
+/*BASIC SETUP*/
+/*.........................*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ html,
+ body{
+     background-color: #ffffff;
+     color: #555;
+     font-family: 'Lato', 'Arial', sans-serif;
+     font-size: 20px;
+     font-weight: 300;
+     text-rendering: optimizeLegibility;
+     overflow-x: hidden;
+ }
+
+.clearfix {zoom: 1}    /*for clearing float*/
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+*:focus{
+    outline: none;
+}
+
+/*.........................*/
+/*REUSABLE COMPONENTS*/
+/*.........................*/
+ .row{
+     max-width: 1140px;
+     margin: 0 auto;
+ }
+
+ section{
+     padding: 80px 0px 80px 0px;
+ }
+
+ .box{
+    padding: 1%;
+ }
+
+/*.........................*/
+/*HEADINGS*/
+/*.........................*/
+h1,
+h2,
+h3  {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+h1{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 240%;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2::after{
+    display: block;
+    background-color: #e67e22;
+    height: 2px;
+    width: 100px;
+    content: " ";
+    margin: 0px auto;
+    margin-top: 30px; 
+}
+
+h3{
+    font-size: 110%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+/*......PARAGRAPH......*/
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+
+/*........ICONS............*/
+.icon-big{
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small{
+    display: inline-block;
+    width: 30px;
+    text-align: center;   
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    /* secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+/*.........................*/
+/*LINKS*/
+/*.........................*/
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* marquee tag */
+.marquee {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*height: 100vh;*/
+  }
+  .marquee .inner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    color: rgb(255, 255, 255);
+    font-size: 1rem; 
+  }
+  .marquee .inner p a{
+      color: #ffffff;
+  }
+  .marquee .inner p a:hover{
+    color: #f1fb66;
+}
+  .marquee .inner > * {
+    white-space: nowrap;
+    padding: 0 6rem;
+
+  }
+
+/*.........................*/
+/*HEADER*/
+/*.........................*/
+
+header{
+    /* linear-gradient(#00000088,#000000b4) */
+    background-image:linear-gradient(#16161698,#16161698), url(img/main_navbar.jpg);
+    opacity: 100%;
+        
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.logo-black{
+    display: none;  
+    height: 50px;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+}
+
+
+/*.........................*/
+/*Main Navigation*/
+/*.........................*/
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 82px;
+
+    
+}
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color:#ebe3e3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;      /*90%= 18px/20px=0.9*/
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.2s;
+    font-weight: 400;
+    
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+
+/*.........................*/
+/*Responsive Nobile Navigation*/
+/*.........................*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 50px;
+    cursor: pointer;
+    display: none;
+}
+.responsive-nav-icon{
+    font-size: 200%;
+    color: #0b05b1;
+}
+
+
+
+/*.........................*/
+/*Sticky Navigation*/
+/*.........................*/
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: rgba(255, 255, 255, 0.98); */
+    background: linear-gradient(#333232,#d3d2d2);
+    /* box-shadow: 0 2px 2px #ffffff; */
+    z-index: 9999;
+}
+.sticky .main-nav{
+    margin-top: 18px;
+}
+.sticky .main-nav li a:link, 
+.sticky .main-nav li a:visited {
+    padding: 16px 0px;
+    color: #030303;
+    
+}
+.sticky .logo{
+    display: none;
+}
+.sticky .logo-black{
+    display: block;
+}
+
+/*.........................*/
+/*FOOTER*/
+/*.........................*/
+
+
+/* The footer is fixed to the bottom of the page */
+
+footer{
+	position: fixed;
+    bottom: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    /* background-color: #504f50; */
+    /* background: linear-gradient(#6d6d6d,#414141,#000000,#000000); */
+    background-color: #504f50;
+    background: linear-gradient(#6d6d6d,#414141,#000000,#000000);
+}
+
+@media (max-height: 800px){
+	footer { position: static; }
+}
+
+
+.footer-distributed{
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 60px 60px 60px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+    /* vertical-align: top; */
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+    width: 33%;
+    /* margin-right: 60px;  */
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+    width: 33%;
+    /* margin-right: -40px; */
+    /* padding-left: 50px; */
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 1px 10px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #504cbd;
+	text-decoration: none;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+    width: 33%;
+    text-align: center;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/*Footer ionicons*/
+.footer-location,
+.footer-mail,
+.footer-call{
+    width: 15%;
+    color: #e0ac1c;
+}
+.footer-mail{
+    margin-top: 10px;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+.ion-facebook,
+.ion-twitter,
+.ion-linkedin,
+.ion-instagram{
+    transition: color 0.2s;
+}
+
+.ion-facebook:hover{
+    color: #3b5998;
+}
+.ion-twitter:hover{
+    color: #00aced;
+}
+.ion-linkedin:hover{
+    color: #007bb6;
+}
+.ion-instagram:hover{
+    color: #517fa4;
+}
+
+
+
+/*About us*/
+
+.aboutus{
+    padding-top: 70px;
+    align-content: center;
+    background-color: #e6e4e4;
+}
+
+
+/* trips */
+
+.visits{
+    padding-top: 70px;
+    height: auto;   
+    max-width: auto;
+}
+.box img{
+    opacity: 100%;
+    width: 97.5%;
+    height: 97.5%;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+.box a h3{
+    padding-top: 5px;
+}
+
+.box img:hover{
+    opacity: 100%;
+    transform: scale(1.05);
+}
+
+div.gallery {
+    border: 1px solid #ccc;
+}
+  
+div.gallery:hover {
+    border: 1px solid #777;
+}
+  
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+  
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+  
+* {
+    box-sizing: border-box;
+}
+  
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+  
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+  
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+  
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Testimonials*/
+
+.testimonials{
+    background-color: #e6e4e4;
+}
+
+
+
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote::before{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+cite{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+
+/* about button */
+
+#more {
+    display: none;
+}
+
+#myBtn{
+    display: block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 1px solid;
+    margin: auto;
+    background-color: #e67e22;
+    color: #ffffff;
+}
+
+#myBtn:hover,
+#myBtn:active {
+    background-color: #bf6516; 
+    transition: background-color 0.2s, border 0.2s, color 0.3s;
+}
+
+
